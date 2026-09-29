@@ -30,7 +30,7 @@ of it in fifteen minutes, and [`docs/operator-quickstart.md`](docs/operator-quic
 walks you through doing exactly that.
 
 ```
-CLAUDE.md                     architecture the project intends (see the gap below)
+AGENTS.md                     architecture the project intends (see the gap below)
 README.edn                    extraction record, schema etzhayyim.repository/v1
 migration.edn                 extraction provenance from etzhayyim/root
 kotoba/src/types.ts           record shapes, DID derivation, slug rules
@@ -64,9 +64,9 @@ Verified on **2026-08-12** at commit `280f96a`:
 | install | `npm install` | 135 packages, 311 MB, ~3 min |
 | install without SSH | `GIT_SSH_COMMAND=/usr/bin/false npm install` on a cold cache | exit 0 — the eight git dependencies are all public and fetch over HTTPS |
 
-## The gap between `CLAUDE.md` and this repository
+## The gap between `AGENTS.md` and this repository
 
-`CLAUDE.md` describes a deployed system: a Worker named `blkchn01`, an appview
+`AGENTS.md` describes a deployed system: a Worker named `blkchn01`, an appview
 with a Protocol Canvas card UI, a W Protocol event stream over RisingWave, a WIT
 export `etzhayyim:blockchain-component/capability@1.0.0`, channels, and a joucho
 cadence heartbeat. **None of that is in this repository**, and the domain it
@@ -85,7 +85,7 @@ wildcard, and both subdomains are NXDOMAIN rather than empty. So
 registry derives from — **cannot be resolved today**. The DIDs are well-formed
 strings that no one can verify.
 
-Read `CLAUDE.md` as the design intent it is, not as a description of running
+Read `AGENTS.md` as the design intent it is, not as a description of running
 software. What is real is the `kotoba/` reference implementation, and it is real
 in the specific sense that its tests pass against a mock PDS. It has never been
 pointed at a live one.
@@ -118,7 +118,7 @@ looking:
 - **ADR-2605203000** is cited correctly: its Option B (*"PDS XRPC rewrite —
   DEFAULT for actor migration"*) is the decision to write `e.write({collection,
   …})` records instead of the vendor's WRecord/RisingWave stack. That is why
-  `CLAUDE.md`'s event-stream section describes machinery this code deliberately
+  `AGENTS.md`'s event-stream section describes machinery this code deliberately
   does not use.
 
 If a future change here starts holding wallet balances, holder identities, or
