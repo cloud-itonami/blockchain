@@ -9,7 +9,7 @@ document does **not** claim to have done.
 
 Read [`../README.md`](../README.md) first. The short version: this repo is a
 registry *about* blockchains, it never talks to one, and the deployed system its
-`CLAUDE.md` describes does not exist yet.
+`AGENTS.md` describes does not exist yet.
 
 - §1–§2 need **nothing installed** — not even Node.
 - §3–§7 need **Node ≥ 20 and npm**, about 311 MB of disk, and network access to
@@ -28,7 +28,7 @@ git ls-files
 ```
 
 ```
-CLAUDE.md
+AGENTS.md
 README.edn
 kotoba/package.json
 kotoba/src/index.ts
@@ -45,7 +45,7 @@ git ls-files -z | xargs -0 wc -c
 ```
 
 ```
-    3686 CLAUDE.md
+    3686 AGENTS.md
      202 README.edn
      841 kotoba/package.json
      415 kotoba/src/index.ts
@@ -64,7 +64,7 @@ Three files carry all the meaning:
 |---|---|
 | `kotoba/src/types.ts` | the five entity kinds, the slug rule, and how a DID is derived from `(kind, slug)` |
 | `kotoba/src/registry.ts` | the only behaviour in the repo — four functions over a PDS collection |
-| `CLAUDE.md` | the architecture the project *intends*, most of which is not built (see §8 and the README) |
+| `AGENTS.md` | the architecture the project *intends*, most of which is not built (see §8 and the README) |
 
 Start with `types.ts`. It is 3.7 KB and once you know the shape of
 `BlockchainEntityRecord` the registry reads itself.
@@ -402,7 +402,7 @@ complete, because the test is `scanned >= maxScan`.
   `did:web:blockchain.etzhayyim.com:*` string in the output above is well-formed
   and unresolvable.
 - **The Worker, appview, W Protocol stream, WIT export and joucho heartbeat in
-  `CLAUDE.md` were not exercised, because no code for them is in this
+  `AGENTS.md` were not exercised, because no code for them is in this
   repository.** I did not verify whether they exist elsewhere.
 - **I did not run this on Linux or Windows,** and did not test Node versions
   other than v26.3.0.
